@@ -1,6 +1,6 @@
 import './banner.css';
 
-function Banner() {
+const Banner = () => {
     return (
         <header className="banner">
             <img src="/img/gvgBanner.png" alt="Banner principal" />
