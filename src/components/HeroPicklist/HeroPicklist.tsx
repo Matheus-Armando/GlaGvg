@@ -1,8 +1,19 @@
 import './HeroPicklist.css';
 import React, { useState, useEffect } from 'react';
 
-const HeroPicklist = (props) => {
-  const [heroes, setHeroes] = useState([]);
+interface Hero {
+  id: number;
+  shortname: string;
+  [key: string]: any;
+}
+
+interface HeroPicklistProps {
+  label: string;
+  placeholder: string;
+}
+
+const HeroPicklist: React.FC<HeroPicklistProps> = (props) => {
+  const [heroes, setHeroes] = useState<Hero[]>([]);
 
   useEffect(() => {
     fetch('/heroes.json')
@@ -14,8 +25,8 @@ const HeroPicklist = (props) => {
       })
       .then(data => {
         const heroOptions = data.heroes
-          .filter(hero => hero.shortname)
-          .map(hero => ({
+          .filter((hero: Hero) => hero.shortname)
+          .map((hero: Hero) => ({
             value: hero.id,
             label: hero.shortname,
             ...hero
@@ -32,7 +43,7 @@ const HeroPicklist = (props) => {
       <select>
         <option value="" disabled hidden>{props.placeholder}...</option>
         {heroes.map(option => (
-        <option key={option.value} value={option.value}>{option.label}</option>
+          <option key={option.value} value={option.value}>{option.label}</option>
         ))}
       </select>
     </div>
