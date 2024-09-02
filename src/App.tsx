@@ -1,33 +1,21 @@
-import React, { useState } from 'react';
-import MultiSelect from './components/MultiSelect';
-import Banner from './components/banner';
-import HeroPicklist from './components/HeroPicklist';
-import TextField from './components/TextField';
 import './index.css';
-
-const options = [
-  { value: 'option1', label: 'Option 1' },
-  { value: 'option2', label: 'Option 2' },
-  { value: 'option3', label: 'Option 3' },
-];
+import Banner from './components/banner';
+import PlayerForm from './components/PlayerForm';
 
 const App: React.FC = () => {
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
-
   return (
-    <div className="App">
-      <Banner />
-      <div className="pt-16">
-        <TextField label="Nickname" placeholder="Digite a nick" />
-        <TextField label="Função" placeholder="Declare a função" />
-        <HeroPicklist label="Hero" placeholder="Selecione o Hero" />
-        <MultiSelect
-          options={options}
-          selectedOptions={selectedOptions}
-          onChange={setSelectedOptions}
-        />
-      </div>
+  <div className="">
+    <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
+      <header className="w-full">
+        <Banner />
+      </header>
+      <main className="flex-grow flex items-center justify-center w-full">
+        <div className="w-full max-w-4xl px-4">
+          <PlayerForm />
+        </div>
+      </main>
     </div>
+  </div>
   );
 };
 

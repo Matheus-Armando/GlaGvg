@@ -1,0 +1,16 @@
+
+.relative {
+    position: relative;
+  }
+  
+  .z-50 {
+    z-index: 50;
+  }
+  
+  .max-h-60 {
+    max-height: 15rem;
+  }
+  
+  .overflow-y-auto {
+    overflow-y: auto;
+  }

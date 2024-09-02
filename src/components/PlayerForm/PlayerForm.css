@@ -1,0 +1,12 @@
+
+.react-select__menu {
+    z-index: 9999; 
+  }
+  
+  .relative {
+    position: relative;
+  }
+  
+  .z-50 {
+    z-index: 50;
+  }
