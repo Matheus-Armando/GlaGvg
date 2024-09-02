@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MultiSelect from '../MultiSelect';
+import { Button } from '../ui/button';
 
 interface Hero {
   id: string;
@@ -72,13 +73,16 @@ const PlayerForm: React.FC = () => {
               onChange={setSelectedOptions}
             />
           </div>
-          <div className="flex items-center justify-between">
+          {/*<div className="flex items-center justify-between">
             <button
               type="submit"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
               Enviar
             </button>
+          </div>*/}
+          <div className="flex items-center justify-between">
+            <Button type="submit" variant="default" size="default"> Enviar </Button>
           </div>
         </form>
       </div>
