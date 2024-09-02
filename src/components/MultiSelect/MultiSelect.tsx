@@ -30,7 +30,7 @@ const MultiSelect: React.FC<MultiSelectProps> = ({ options, selectedOptions, onC
       >
         {selectedOptions.length > 0
           ? selectedOptions.map(option => options.find(o => o.value === option)?.label).join(', ')
-          : 'Select options'}
+          : 'Selecione as opções desejadas'}
       </div>
       {isOpen && (
         <div className="absolute border mt-1 bg-white dark:bg-gray-700 w-full z-50 rounded-md shadow-lg max-h-60 overflow-y-auto">
