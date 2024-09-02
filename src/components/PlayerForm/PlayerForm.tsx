@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import MultiSelect from '../MultiSelect';
 import { Button } from '../ui/button';
+import ShadMultiSelect from '../ShadMultiSelect/ShadMultiSelect';
 
 interface Hero {
   id: string;
@@ -23,10 +23,12 @@ const PlayerForm: React.FC = () => {
       .then(response => response.json())
       .then(data => {
         if (data && Array.isArray(data.heroes)) {
-          const transformedOptions = data.heroes.map((hero: Hero) => ({
+            const transformedOptions: { value: string, label: string }[] = data.heroes.map((hero: Hero) => ({
             value: hero.id,
             label: hero.shortname
-          }));
+            }))
+            .filter((option: { value: number, label: string }) => option.label && option.value)
+            .sort((a: {label: string}, b: {label: string}) => a.label.localeCompare(b.label));
           setOptions(transformedOptions);
         } else {
           console.error('Erro: dados não são um array', data);
@@ -67,20 +69,17 @@ const PlayerForm: React.FC = () => {
           </div>
           <div className="mb-4">
             <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Opções</label>
-            <MultiSelect
+            <ShadMultiSelect
               options={options}
-              selectedOptions={selectedOptions}
-              onChange={setSelectedOptions}
+              onValueChange={setSelectedOptions}
+              defaultValue={selectedOptions}
+              placeholder="Selecione as opções"
+              animation={0.5}
+              maxCount={5}
+              modalPopover={false}
+              className="custom-multi-select"
             />
           </div>
-          {/*<div className="flex items-center justify-between">
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            >
-              Enviar
-            </button>
-          </div>*/}
           <div className="flex items-center justify-between">
             <Button type="submit" variant="default" size="default"> Enviar </Button>
           </div>
