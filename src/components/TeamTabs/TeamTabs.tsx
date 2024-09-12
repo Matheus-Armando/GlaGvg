@@ -13,15 +13,26 @@ export interface Player {
   const TeamTabs: React.FC = () => {
     const [heroes, setHeroes] = useState<Hero[]>([]);
     const players: Player[] = [
-      { id: 1, name: 'Player 1', role: 'Role 1', heroes: [1, 2] },
-      { id: 2, name: 'Player 2', role: 'Role 2', heroes: [2, 3] },
-      { id: 3, name: 'Player 3', role: 'Role 3', heroes: [1, 3] },
+      { id: 1, name: 'Cool Kids', role: 'DPS', heroes: [1, 2] },
+      { id: 2, name: 'Hector', role: 'Suporte', heroes: [2, 3] },
+      { id: 3, name: 'Storm', role: 'Tanque', heroes: [1, 3] },
+      { id: 3, name: 'Pitapigas', role: 'DPS', heroes: [1, 3] },
+      { id: 3, name: 'Doug', role: 'DPS', heroes: [1, 3] },
+      { id: 3, name: 'Jojji', role: 'Solo Bomb', heroes: [1, 3] },
     ];
   
     useEffect(() => {
-      fetch('/heroes.json')
+      fetch('../../public/heroes.json')
         .then(response => response.json())
-        .then(data => setHeroes(data))
+        .then(data => {
+          if (Array.isArray(data)) {
+            setHeroes(data);
+          } else if (data && Array.isArray(data.heroes)) {
+            setHeroes(data.heroes);
+          } else {
+            console.error('Data is not an array:', data);
+          }
+        })
         .catch(error => console.error('Error fetching heroes:', error));
     }, []);
   
