@@ -1,11 +1,9 @@
-/*@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';*/
-
+/* Importações do Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Definições de variáveis de tema */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -34,6 +32,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  overflow: auto; 
 }
 
 h1 {
@@ -41,6 +40,7 @@ h1 {
   line-height: 1.1;
 }
 
+/* Definições de variáveis de tema para Tailwind CSS */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -97,6 +97,7 @@ h1 {
   }
 }
 
+/* Aplicação de estilos básicos usando Tailwind CSS */
 @layer base {
   * {
     @apply border-border;
@@ -104,4 +105,15 @@ h1 {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Estilos específicos para o banner */
+.banner {
+  background-color: black;
+  text-align: center;
+  height: 100px; /* Defina uma altura para o banner */
+}
+
+.banner img {
+  max-width: 100%;
 }
