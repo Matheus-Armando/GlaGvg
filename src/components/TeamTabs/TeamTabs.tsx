@@ -17,7 +17,7 @@ export interface Player {
       { id: 2, name: 'Hector', role: 'Suporte', heroes: [2, 3] },
       { id: 3, name: 'Storm', role: 'Tanque', heroes: [1, 3] },
       { id: 3, name: 'Pitapigas', role: 'DPS', heroes: [1, 3] },
-      { id: 3, name: 'Doug', role: 'DPS', heroes: [1, 3] },
+      { id: 3, name: 'Lubins', role: 'DPS', heroes: [1, 3] },
       { id: 3, name: 'Jojji', role: 'Solo Bomb', heroes: [1, 3] },
     ];
   
