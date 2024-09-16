@@ -21,7 +21,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ player, heroes }) => {
       <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">{player.name}</h2>
       <p className="text-gray-700 dark:text-gray-300">{player.role}</p>
       <div className="mt-4">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Heroes</h3>
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Picks</h3>
         <ul className="list-disc list-inside">
           {playerHeroes.map(hero => (
             <li key={hero.id} className="text-gray-700 dark:text-gray-300 flex items-center">
