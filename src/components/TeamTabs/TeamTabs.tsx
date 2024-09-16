@@ -13,12 +13,12 @@ export interface Player {
   const TeamTabs: React.FC = () => {
     const [heroes, setHeroes] = useState<Hero[]>([]);
     const players: Player[] = [
-      { id: 1, name: 'Cool Kids', role: 'DPS', heroes: [1, 2] },
-      { id: 2, name: 'Hector', role: 'Suporte', heroes: [2, 3] },
-      { id: 3, name: 'Storm', role: 'Tanque', heroes: [1, 3] },
-      { id: 3, name: 'Pitapigas', role: 'DPS', heroes: [1, 3] },
-      { id: 3, name: 'Lubins', role: 'DPS', heroes: [1, 3] },
-      { id: 3, name: 'Jojji', role: 'Solo Bomb', heroes: [1, 3] },
+      { id: 1, name: 'Cool Kids', role: 'DPS', heroes: [89, 22, 91, 14] },
+      { id: 2, name: 'Hector', role: 'Suporte', heroes: [26, 67, 48, 75] },
+      { id: 3, name: 'Storm', role: 'Tanque', heroes: [4, 20, 94] },
+      { id: 3, name: 'Pitapigas', role: 'DPS', heroes: [14, 90, 56, 61, 83] },
+      { id: 3, name: 'Lubins', role: 'DPS', heroes: [61, 83, 56, 64] },
+      { id: 3, name: 'Jojji', role: 'Solo Bomb', heroes: [32, 47] },
     ];
   
     useEffect(() => {

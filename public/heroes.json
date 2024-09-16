@@ -428,19 +428,6 @@
             ]
         },
         {
-            "id": 36,
-            "name": "Enel",
-            "shortname": "Enel",
-            "icon": "/img/heroes/enel.png",
-            "role": "DPS",
-            "tier": "Diamante",
-            "type": [
-                "Atirador",
-                "Akuma no Mi",
-                "Especialista"
-            ]
-        },
-        {
             "id": 37,
             "name": "Franky",
             "shortname": "Franky",
