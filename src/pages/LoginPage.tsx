@@ -4,7 +4,6 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Input } from '@/components/ui/input';
 import React from 'react';
 
-
 const LoginPage: React.FC = () => {
     return (
         <Layout>    
@@ -22,7 +21,7 @@ const LoginPage: React.FC = () => {
                                 <label className="block text-gray-700 dark:text-gray-500">Password</label>
                                 <Input type="password" placeholder="Enter your password" className="w-full mt-2" />
                             </div>
-                            <Button type="submit" className="w-full mt-4">Login</Button>
+                            <Button type="submit" variant="default" className="w-full mt-4">Login</Button>
                         </form>
                     </CardContent>
                     <CardFooter className="text-center">
