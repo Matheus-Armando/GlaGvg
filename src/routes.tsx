@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import IslandReview from './pages/IslandReview';
 import LoginPage from './pages/LoginPage';
-import IslandsPage from './components/IslandsPage/IslandPage';
+import IslandsPage from './pages/IslandPage';
 
 const AppRoutes: React.FC = () => {
   return (

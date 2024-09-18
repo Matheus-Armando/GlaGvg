@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import IslandCard from '../IslandsCards/IslandsCards';
-import Layout from '../Layout/Layout';
+import IslandCard from '../components/IslandsCards/IslandsCards';
+import Layout from '../components/Layout/Layout';
 
 const IslandsPage: React.FC = () => {
   const navigate = useNavigate();
