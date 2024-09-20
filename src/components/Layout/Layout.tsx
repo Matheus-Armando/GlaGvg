@@ -8,25 +8,29 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, breadcrumbItems }) => {
-  const defaultBreadcrumbItems = [{ label: 'Home', href: '/' }, ...(breadcrumbItems || [])];
-
   return (
     <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
       <Banner />
-      {defaultBreadcrumbItems && (
+      {breadcrumbItems && (
         <div className="flex justify-center items-center mb-12">
-          <Breadcrumb>
+          <Breadcrumb className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
             <BreadcrumbList>
-              {defaultBreadcrumbItems.map((item, index) => (
+              {breadcrumbItems.map((item, index) => (
                 <React.Fragment key={index}>
                   <BreadcrumbItem>
                     {item.href ? (
-                      <BreadcrumbLink href={item.href}>{item.label}</BreadcrumbLink>
+                      <BreadcrumbLink href={item.href} className="text-blue-600 dark:text-blue-400">
+                        {item.label}
+                      </BreadcrumbLink>
                     ) : (
-                      <BreadcrumbPage>{item.label}</BreadcrumbPage>
+                      <BreadcrumbPage className="text-gray-900 dark:text-gray-100">
+                        {item.label}
+                      </BreadcrumbPage>
                     )}
                   </BreadcrumbItem>
-                  {index < defaultBreadcrumbItems.length - 1 && <BreadcrumbSeparator />}
+                  {index < breadcrumbItems.length - 1 && (
+                    <BreadcrumbSeparator className="text-gray-500 dark:text-gray-400" />
+                  )}
                 </React.Fragment>
               ))}
             </BreadcrumbList>

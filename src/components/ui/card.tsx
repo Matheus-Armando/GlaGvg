@@ -9,7 +9,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-full bg-card text-card-foreground shadow-sm",
+      "rounded-lg bg-card text-card-foreground shadow-sm", // Adiciona borda responsiva ao modo escuro
       className
     )}
     {...props}
