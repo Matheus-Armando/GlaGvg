@@ -5,7 +5,7 @@ import Layout from '../components/Layout/Layout';
 
 const IslandReview: React.FC = () => {
   return (
-    <Layout>
+    <Layout title='Picks e Review'>
       <div className="w-full max-w-4xl px-4 mb-8">
         <PlayerForm />
       </div>
