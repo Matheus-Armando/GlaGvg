@@ -19,7 +19,7 @@ const PlayerForm: React.FC = () => {
   const [options, setOptions] = useState<{ value: string, label: string }[]>([]);
 
   useEffect(() => {
-    fetch('./heroes.json')
+    fetch('../heroes.json')
       .then(response => response.json())
       .then(data => {
         if (data && Array.isArray(data.heroes)) {
