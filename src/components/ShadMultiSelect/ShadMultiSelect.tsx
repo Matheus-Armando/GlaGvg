@@ -310,7 +310,7 @@ export const ShadMultiSelect = React.forwardRef<
                   >
                     <CheckIcon className="h-4 w-4" />
                   </div>
-                  <span>(Select All)</span>
+                  <span>(Selecione Todos)</span>
                 </CommandItem>
                 {options.map((option) => {
                   const isSelected = selectedValues.includes(option.value);
@@ -347,7 +347,7 @@ export const ShadMultiSelect = React.forwardRef<
                         onSelect={handleClear}
                         className="flex-1 justify-center cursor-pointer"
                       >
-                        Clear
+                        Limpar
                       </CommandItem>
                       <Separator
                         orientation="vertical"
